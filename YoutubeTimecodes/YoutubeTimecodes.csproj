@@ -10,6 +10,7 @@
   <ItemGroup>
     <PackageReference Include="Azure.AI.TextAnalytics" Version="5.2.0-beta.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="YoutubeExplode" Version="6.0.5" />
   </ItemGroup>
 
 </Project>
