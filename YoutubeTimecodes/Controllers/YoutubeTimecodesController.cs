@@ -12,8 +12,8 @@ namespace YoutubeTimecodes.Controllers
 
         public YoutubeTimecodesController(IYoutubeTimecodesService youtubeTimecodesService, ILogger<YoutubeTimecodesController> logger)
         {
-            this._youtubeTimecodesService = youtubeTimecodesService;
-            this._logger = logger;
+            this._youtubeTimecodesService = youtubeTimecodesService ?? throw new ArgumentNullException(paramName: nameof(youtubeTimecodesService));
+            this._logger = logger ?? throw new ArgumentNullException(paramName: nameof(logger));
         }
 
         [HttpGet]

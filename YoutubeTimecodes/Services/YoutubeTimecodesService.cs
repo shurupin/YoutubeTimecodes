@@ -6,15 +6,19 @@
 
     public class YoutubeTimecodesService : IYoutubeTimecodesService
     {
-        public YoutubeTimecodesService()
+        private readonly ITextSummarizationService _textSummarizationService;
+
+        public YoutubeTimecodesService(ITextSummarizationService textSummarizationService)
         {
+            this._textSummarizationService = textSummarizationService ?? throw new ArgumentNullException(paramName: nameof(textSummarizationService));
         }
 
         public async Task<List<string>> GetYoutubeTimecodesAsync(string youtubeVideoUrl)
         {
             try
             {
-                List<string> result = new List<string>() { "test1, test2" };
+                List<string> result = await this._textSummarizationService.GetSummariesAsync("");
+
                 return result;
             }
             catch (Exception e)
